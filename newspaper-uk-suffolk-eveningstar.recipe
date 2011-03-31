@@ -1,0 +1,36 @@
+class AdvancedUserRecipe1301593821(BasicNewsRecipe):
+
+    title = u"Evening Star"
+    __author__ = u"jinglemansweep@gmail.com"
+    publisher = u"Archant"
+    category = u"news, UK, Ipswich, Suffolk, East Anglia"
+    publication_type = u"newspaper"
+
+    oldest_article = 7
+    no_stylesheets = True
+    max_articles_per_feed = 100
+    remove_tags = [
+        {"name": "p", "attrs": {"class": "object-right"}},
+        {"name": "div", "attrs": {"class": "share-actions"}},
+        {"name": "p", "attrs": {"class": "lead"}},
+        {"name": "div", "attrs": {"class": "in-page-actions"}},
+        {"name": "script"},
+        {"name": "form"},
+        {"name": "div", "attrs": {"class": "article-comments"}},
+        {"name": "a", "attrs": {"name": "postview"}},
+        {"name": "div", "attrs": {"class": "loggedin"}},
+        {"name": "div", "attrs": {"class": "loggedout"}}
+    ]
+    keep_only_tags = [
+        {"name": "div", "attrs": {"class": "content-a"}}
+    ]    
+
+    feeds = [
+        (u"Headlines", u"http://www.eveningstar.co.uk/cmlink/evening_star_news_1_210923")
+    ]
+
+    def get_masthead_url(self):
+        return "http://www.eveningstar.co.uk/polopoly_fs/star_logo_7_6699!image/3503973866.jpg_gen/derivatives/default/3503973866.jpg"
+
+    
+
